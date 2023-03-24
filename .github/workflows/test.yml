@@ -13,7 +13,7 @@ jobs:
           distribution: 'temurin'
       - name: Test
         run: 
-          mvn -pl bundles/core test -Dtest=com.adobe.cq.wcm.core.components.internal.models.v1.contentfragment.ContentFragmentImplTest.structured
+          mvn -pl bundles/core -am test -Dtest=com.adobe.cq.wcm.core.components.internal.models.v1.contentfragment.ContentFragmentImplTest.structured
         
   Test_With_Nondex_Shuffling:
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
           distribution: 'temurin'
       - name: Test
         run: 
-          mvn -pl bundles/core edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.adobe.cq.wcm.core.components.internal.models.v1.contentfragment.ContentFragmentImplTest.structured
+          mvn -pl bundles/core -am edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.adobe.cq.wcm.core.components.internal.models.v1.contentfragment.ContentFragmentImplTest.structured
